@@ -23,6 +23,7 @@
     color: #402E2A;
     font-weight: bold;
     text-align: center;
+    width: fit-content;
 }
 .menu_vertical span {
     line-height: 30px;
