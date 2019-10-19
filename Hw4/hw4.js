@@ -931,25 +931,39 @@ const jobData = {
     ]
 };
 console.log(jobData);
+
 // // 14.1
-for (i = 0; i < jobData.length; i++) {
     const jobHits = jobData.hits;
     console.log(jobHits);
+
 // 14.2
     const firstJob = jobHits[0];
     console.log(firstJob);
+
 // 14.3
     const title = firstJob.jobTitle;
     console.log(title);
+
 // console.log(jobData.hits[i].jobTitle);
 // 14.4
     const benefits = firstJob.benefits;
     console.log(benefits);
+
 // 14.5
-    const benefitValue = benefits[0].benefitValue
+for (let i = 0; i < benefits.length; i++) {
+    const benefitValue = benefits[i].benefitValue;
     console.log(benefitValue);
-// 14.6
 }
+
+// 14.6
+for (let i = 0; i < jobData.length; i++) {
+    const allJob = jobHits[i];
+    const jobTitle = allJob.jobTitle;
+    const benefitValues = benefits[i].benefitValue;
+    console.log(jobTitle);
+    console.log(benefitValues);
+}
+
 // ex15
 const pos = {
     x: 200,
