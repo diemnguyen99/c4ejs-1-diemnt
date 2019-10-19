@@ -955,13 +955,19 @@ for (let i = 0; i < benefits.length; i++) {
     console.log(benefitValue);
 }
 
-// 14.6
+// 14.6, 7
 for (let i = 0; i < jobData.length; i++) {
     const allJob = jobHits[i];
     const jobTitle = allJob.jobTitle;
     const benefitValues = benefits[i].benefitValue;
     console.log(jobTitle);
     console.log(benefitValues);
+    const salary = allJob.salaryMax;
+    const loacation = allJob.locations;
+    const skill = allJob.skills;
+    console.log(salary);
+    console.log(loacation);
+    console.log(skill);
 }
 
 // ex15
