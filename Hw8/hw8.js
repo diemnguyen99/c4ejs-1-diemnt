@@ -4,15 +4,19 @@
 // 2 - a
 // 3 - c
 // 4 - d
+
 // 2
 let timerId = setInterval(() => console.log('Heehaw'), 1000);
 setTimeout(() => { clearInterval(timerId);
 }, 4000);
+
 // 3
 // 3.1
 // It is possible to access variables from a higher block, just like it is possible with var to access variables from a higher scope.
+
 // 3.2
 // You can only access variables that have the same scope or a higher scope. So, from inside a function, you can access the global scope. But, globally, you can’t access a variable that is created only in a function.
+
 // 4
 let li = document.getElementsByTagName("li")[0];
 console.log(li); 
@@ -20,13 +24,15 @@ for (let i = 0; i < document.getElementsByTagName('li').length; i++) {
     li = document.getElementsByTagName('li')[i];
     console.log(li);
 }
-// 5
+
+//5
 let div = document.getElementsByClassName("singer")[1];
 console.log(div);
 for (let i = 0; i < document.getElementsByClassName('singer').length; i++) {
     div = document.getElementsByClassName('singer')[i];
     console.log(div);
 }
+
 // 7
 // 7.1
 const button1 = document.getElementById('button1');
@@ -39,6 +45,7 @@ console.log(button2);
 button2.addEventListener('click', (e) => {
     console.log(e.target);
 });
+
 // 7.2
 const btn1 = document.getElementById('button1');
 console.log(btn1);
@@ -50,6 +57,7 @@ console.log(btn2);
 btn2.addEventListener('keydown', (e) => {
     console.log(e.key);
 });
+
 // REVIEW
 // ex8
 function wish() {
@@ -57,6 +65,7 @@ function wish() {
     alert('Happy');
 }
 wish();
+
 // ex9
 function userName(name, wish) {
     name = 'A';
@@ -65,6 +74,7 @@ function userName(name, wish) {
     alert(wish);
 }
 userName();
+
 // ex10
 function userName(name, wish) { 
     name = 'A';
@@ -77,31 +87,38 @@ function userName(name, wish) {
     }
 }
 userName();
+
 // ex11
 // 11.2
 const btn = document.getElementById('btn');
 console.log(btn);
+
 // 11.3
     btn.addEventListener('click', () => {
         console.log('Upper it!!! Just clicked');
  });
+
 // 11.4
  const name_input = document.getElementById('name_input');
  console.log(name_input);
+
 // 11.5, 6
-// function getValue() {
-// const value = name_input.value;
-// console.log(value);
-// }
-// name_input.addEventListener('keyup', getValue);
+function getValue() {
+const value = name_input.value;
+console.log(value);
+}
+name_input.addEventListener('keyup', getValue);
 btn.addEventListener('click', () => {
 console.log(name_input.value.toUpperCase());
 });
+
 // 11.7
 const result_div = document.getElementById('result_div');
 console.log(result_div);
+
 // 11.8
 document.getElementById('result_div').style.textTransform = "uppercase";
+
 // SERIOUS EXERCISES
 // ex12
 // 12.1
@@ -110,14 +127,21 @@ for (let i = 0; i < timeSheetData.length; i++) {
     tableContent = timeSheetData[i];
     console.log(tableContent);
 }
+
 // 12.3
 const tsBody = document.getElementById('ts_body');
 console.log(tsBody);
-// // 12.4
-// var new_row = timeSheetData.parentNode.insertRow( timeSheetData.rowIndex + 1 );
-// new_row.insertCell(0).innerHTML = "Project";
-// new_row.insertCell(1).innerHTML = "Task";
-// new_row.insertCell(2).innerHTML = "Time Spent";
+
+// 12.4
+var table = document.getElementById("myTable");
+var row = table.insertRow(0);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2)
+cell1.innerHTML = "Project Test 1";
+cell2.innerHTML = "Task Test 1";
+cell3.innerHTML = "0";
+
 // 12.6
 const enter_project = document.getElementById('enterProject');
 console.log(enter_project);
@@ -127,6 +151,7 @@ const time_spent = document.getElementById('timeSpent');
 console.log(time_spent);
 const add_btn = document.getElementById('add_btn');
 console.log(add_btn);
+
 // UI LAB
 // Counter
 let count = 0;
@@ -145,18 +170,20 @@ function lowNum (){
     document.getElementById('num').value = count;
     count-=1;
 }
-// Timer
-function startCount() {
-    start.addEventListener('click', () => {
-        const timer = document.getElementById('timer');
-            console.log(timer.value);
-        });
-}
-let time = timer.value;
 
-function stopCount() {
+// // Timer
+// // function startCount() {
+// //     start.addEventListener('click', () => {
+// //         const timer = document.getElementById('timer');
+// //             console.log(timer.value);
+// //         });
+// // }
+// // let time = timer.value;
 
-}
+// // function stopCount() {
+
+// }
+
 // Timer
 start = document.getElementById("start");
 start.addEventListener('click', () => {
@@ -172,6 +199,7 @@ stop.addEventListener('click', myStopFunction);
 function myStopFunction() {
     clearInterval(k);
 }
+
 // Random quote
 let listQuote = [{
     "quoteText": "Genius is one percent inspiration and ninety-nine percent perspiration.",
@@ -384,4 +412,37 @@ let listQuote = [{
             author.innerHTML = listQuote[Random].quoteAuthor;
         }
     }
+    
 // Your belongings
+let listOfBelongings = ['Backpack', 'MiBand watch', 'Ring'];
+console.log(listOfBelongings);
+const listItems = document.getElementById('listItems');
+console.log(listItems);
+for (let i = 0; i < listOfBelongings.length; i++) {
+    listItems.insertAdjacentHTML('beforeend', `<li>${listOfBelongings[i]} <button class="btn_remove">Remove</button></li>`);
+}
+let addOne = document.getElementById('add_one');
+addOne.addEventListener('click', addItem);
+const enterOne = document.getElementById('enter_one');
+function addItem() {
+    let newI = enterOne.value;
+    listOfBelongings.push(newI);
+    listItems.insertAdjacentHTML('beforeend', `<li><span> ${newI} <button class="btn_remove">Remove</button></span></li>`);
+}
+function resetInput() {
+    document.getElementById("enter_one").value = " ";
+}
+addItem();
+resetInput();
+function deteleI() {
+    const btn_remove = document.getElementsByClassName('btn_remove');
+    for(let i = 0; i < btn_remove.length; i++) {
+        let clickBtn = btn_remove[i];
+        clickBtn.addEventListener('click', () => {
+            let span = clickBtn.parentNode;
+            let li = span.parentNode;
+            li.remove();
+        });
+    }
+}
+deteleI();
