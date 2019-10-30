@@ -31,6 +31,7 @@ const jsonPromise = connection.json();
 console.log(jsonPromise);
 });
 // ex3
+myAPI = 'https://sheetdb.io/api/v1/gqdssu23dvhuw';
 // REVIEW
 // ex4
 const randomNum = () => {
@@ -87,4 +88,42 @@ async function showQuote() {
     }
 showQuote();
 // ex8
+const new_wish = document.getElementById('newWish');
+const btn_add = document.getElementById('btnAdd');
+btn_add.addEventListener('click', () => {
+    name = new_wish.value;
+    console.log(name);
+});
+const API_URL = 'https://sheetdb.io/api/v1/k71edtd6htx0r';
+    function id() {
+        const x = Math.random;
+        const y = x.toString(36);
+        const z = y.substr(2, 9);
+        console.log(z);
+        return z;
+    }
+    
+async function addLocation() {
+    const zz = id();
+    const newLocation = {
+        id: zz,
+        location: `${name}`,
+    };
+const body = {
+    data: [
+        newLocation
+    ]
+}
+const options = {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+       'Content-type': 'application/json',
+    }
+};
+const conn = await fetch(API_URL, options);
+const data = await conn.json();
+console.log(data);
+}
+addLocation();
 
