@@ -185,16 +185,20 @@ function lowNum (){
 // }
 
 // Timer
-start = document.getElementById("start");
-start.addEventListener('click', () => {
+let start = document.getElementById("start");
+start.addEventListener('click', myStartFunction);
+function myStartFunction() {
     let inputcount = document.getElementById("timer").value;
     time = document.getElementById("timer");
-    k = setInterval(() => {
+    let k = setInterval(() => {
+        time.value = inputcount;
         inputcount -= 1;
-        time.value = inputcount;  
+        if (inputcount < 0) {
+            clearInterval(k);
+        }
     }, 500); 
-});
-stop = document.getElementById('stop');
+}
+let stop = document.getElementById("stop");
 stop.addEventListener('click', myStopFunction);
 function myStopFunction() {
     clearInterval(k);
@@ -446,3 +450,16 @@ function deteleI() {
     }
 }
 deteleI();
+// TIME SHEET
+function removeLine() {
+const btnDel = document.getElementById("del");
+btnDel.addEventListener('click', removeLine);
+    for (let i = 0; i < btnDel.length; i++) {
+        btnDel.removeChild(btnDel.childNodes[i]);
+        console.log(removeLine.target);
+    }
+}
+removeLine();
+    
+
+

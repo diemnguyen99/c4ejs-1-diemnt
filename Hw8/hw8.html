@@ -6,7 +6,7 @@
     <title>C4EJS Session 8</title>
 </head>
 <body>
-    <!-- <ul>
+    <ul>
         <li>News</li>
         <li>Articles</li>
         <li>Blog</li>
@@ -34,6 +34,7 @@
                 <th>Project</th>
                 <th>Task</th>
                 <th>Time spent</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="myTable">
@@ -42,26 +43,30 @@
                 <td>Learn front-end</td>
                 <td>Learn HTML</td>
                 <td>6</td>
+                <td><button id="del" onclick="removeLine" data-index="1">X</button></td>
             </tr>
             <tr>
                 <td>Learn front-end</td>
                 <td>Learn HTML</td>
                 <td>8</td>
+                <td><button id="del" onclick="removeLine" data-index="2">X</button></td>
             </tr>
             <tr>
                 <td>Learn front-end</td>
                 <td>Learn JS Variable and Data Types</td>
                 <td>6</td>
+                <td><button id="del" onclick="removeLine" data-index="3">X</button></td>
             </tr>
             <tr>
                 <td>Laern git</td>
                 <td>Learn git basics</td>
                 <td>2</td>
+                <td><button id="del" onclick="removeLine" data-index="4">X</button></td>
             </tr>
         </tbody>
     </table>
-    <br> -->
-    <!-- <table border="1" style="width: fit-content">
+    <br>
+    <table border="1" style="width: fit-content">
         <thead>
             <tr>
                 <th>Project</th>
@@ -76,24 +81,26 @@
                 <td>0</td>
             </tr>
         </tbody>
-        </table>  -->
-    <!-- <button id="btn1" type="button"> + </button>
+        </table> 
+    <button id="btn1" type="button"> + </button>
     <input type="text" id="num">
-    <button id="btn2" type="button"> - </button> -->
-    <!-- <input type="text" id="timer">
+    <button id="btn2" type="button"> - </button>
+    <input type="number" id="timer">
     <button type="button" id="start">Start</button>
-    <button type="button" id="stop">Stop</button> -->
-    <!-- <button id="btn">Reload</button>
+    <button type="button" id="stop">Stop</button>
+    <br>
+    <br>
+    <button id="btn">Reload</button>
     <p id="quote">Quote</p>
-    <p id="author">Author</p> -->
+    <p id="author">Author</p> 
     <p>Your belongings</p>
     <span id="">
         <input id="enter_one" type="text">
     </span>
     <button id="add_one">Add</button>
         <ul id="listItems">
-            <!-- <li>Test Item 1</li>
-            <li>Test Item 2</li> -->
+            <li>Test Item 1</li>
+            <li>Test Item 2</li>
         </ul>
 </body>
 <script src="hw8.js"></script>
